@@ -35,3 +35,6 @@ build/
 ### Fotos e páginas geradas: nunca entram no repositório ###
 /dados/
 /fotos-teste/
+
+### Duelos guardados, com as fotos; nunca vão para o repositório ###
+/duelos/

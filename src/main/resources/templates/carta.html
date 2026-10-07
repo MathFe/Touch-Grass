@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title th:text="|Carta de ${jogador.nome}|">Carta</title>
+	<link rel="stylesheet" href="/estilo.css">
+</head>
+<body>
+	<header class="topo"><a class="marca" href="/">Duelo de Fotos</a></header>
+	<main class="estreito">
+		<section class="bloco carta">
+			<span class="passo">Carta secreta</span>
+			<h1 th:text="${jogador.nome}"></h1>
+			<p>Traga uma foto para cada tema. Vale interpretar; quem decide é o juiz.</p>
+			<ol>
+				<li th:each="r : ${jogador.rodadas}" th:text="${r.tema}"></li>
+			</ol>
+			<div class="botoes nao-imprime">
+				<a class="botao" th:href="@{/duelos/{id}(id=${duelo.id})}">Fechar a carta</a>
+				<button type="button" class="claro" onclick="window.print()">Imprimir</button>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

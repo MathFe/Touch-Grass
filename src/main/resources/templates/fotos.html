@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>As fotos do duelo</title>
+	<link rel="stylesheet" href="/estilo.css">
+</head>
+<body>
+	<header class="topo"><a class="marca" href="/">Duelo de Fotos</a></header>
+	<main class="estreito">
+		<h1>As fotos do duelo</h1>
+		<p class="sub">Uma foto por tema, em JPEG ou PNG. Tema sem foto vale zero.</p>
+
+		<form method="post" th:action="@{/duelos/{id}/fotos(id=${duelo.id})}" enctype="multipart/form-data">
+			<p class="erro" role="alert" style="margin-top: 1.5rem" th:if="${erro}" th:text="${erro}"></p>
+			<section class="bloco" th:each="j, ji : ${duelo.jogadores}">
+				<h2 th:text="${j.nome}"></h2>
+				<div class="tema-envio" th:each="r, ri : ${j.rodadas}">
+					<label th:for="|j${ji.index}t${ri.index}|" th:text="${r.tema}"></label>
+					<input type="file" accept="image/jpeg,image/png" th:id="|j${ji.index}t${ri.index}|"
+						th:name="|j${ji.index}t${ri.index}|">
+				</div>
+			</section>
+			<div class="botoes">
+				<button type="submit">Chamar o juiz</button>
+			</div>
+			<p class="pequeno" id="aguarde" hidden>O Gemma está julgando as fotos, uma de cada vez. Pode levar alguns minutos.</p>
+		</form>
+	</main>
+
+	<script>
+		const form = document.querySelector('form');
+		form.addEventListener('submit', () => {
+			form.querySelector('button').disabled = true;
+			document.getElementById('aguarde').hidden = false;
+		});
+	</script>
+</body>
+</html>

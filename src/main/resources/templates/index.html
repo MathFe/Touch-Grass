@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Duelo de Fotos</title>
+	<link rel="stylesheet" href="/estilo.css">
+</head>
+<body>
+	<header class="topo"><a class="marca" href="/">Duelo de Fotos</a></header>
+	<main class="estreito">
+		<h1>Saiam de casa. O juiz espera aqui.</h1>
+		<p class="sub">Cinco temas secretos para cada um, uma foto por tema, e na volta o Gemma decide quem venceu.</p>
+
+		<form class="bloco" method="post" action="/duelos">
+			<p class="erro" role="alert" th:if="${erro}" th:text="${erro}"></p>
+			<div class="campo">
+				<label for="nome1">Quem joga</label>
+				<input type="text" id="nome1" name="nome1" maxlength="30" required>
+			</div>
+			<div class="campo">
+				<label for="nome2">Contra quem</label>
+				<input type="text" id="nome2" name="nome2" maxlength="30" required>
+			</div>
+			<fieldset>
+				<legend>O passeio é</legend>
+				<div class="opcoes">
+					<label><input type="radio" name="periodo" value="dia" checked> De dia</label>
+					<label><input type="radio" name="periodo" value="noite"> À noite</label>
+				</div>
+			</fieldset>
+			<div class="campo">
+				<label for="lugar">Que tipo de lugar (opcional)</label>
+				<input type="text" id="lugar" name="lugar" maxlength="60">
+			</div>
+			<div class="botoes">
+				<button type="submit">Sortear os temas</button>
+			</div>
+			<p class="pequeno" id="aguarde" hidden>O Gemma está escolhendo os temas.</p>
+		</form>
+	</main>
+
+	<script>
+		const form = document.querySelector('form');
+		form.addEventListener('submit', () => {
+			form.querySelector('button').disabled = true;
+			document.getElementById('aguarde').hidden = false;
+		});
+	</script>
+</body>
+</html>

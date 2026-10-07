@@ -1,0 +1,77 @@
+# Os temas do duelo, um por linha, no formato periodo|tema.
+# O período é dia, noite ou sempre. Nenhum tema pede foto de pessoas.
+sempre|Algo redondo
+sempre|Algo triangular
+sempre|Algo em espiral
+sempre|Algo simétrico
+sempre|Algo torto
+sempre|Algo enferrujado
+sempre|Algo quebrado
+sempre|Algo remendado
+sempre|Algo rachado
+sempre|Algo desbotado
+sempre|Algo novo em folha
+sempre|Algo mais velho que você
+sempre|Algo mais alto que um poste
+sempre|Algo menor que uma moeda
+sempre|Algo listrado
+sempre|Algo quadriculado
+sempre|Algo cheio de furos
+sempre|Algo vermelho
+sempre|Algo amarelo
+sempre|Algo azul
+sempre|Algo de duas cores
+sempre|Algo de madeira
+sempre|Algo de ferro
+sempre|Algo de pedra
+sempre|Algo de vidro
+sempre|Algo pintado à mão
+sempre|Algo escrito à mão
+sempre|Algo que parece ter um rosto
+sempre|Algo fora do lugar
+sempre|Algo esquecido
+sempre|Algo escondido
+sempre|Algo pendurado
+sempre|Algo empilhado
+sempre|Algo em fila
+sempre|Algo em par
+sempre|Algo sozinho
+sempre|Algo repetido muitas vezes
+sempre|Algo áspero
+sempre|Algo liso
+sempre|Algo molhado
+sempre|Algo coberto de plantas
+sempre|Algo que nasceu onde não devia
+sempre|Algo que balança
+sempre|Algo que gira
+sempre|Algo transparente
+sempre|Algo refletido num vidro
+sempre|Algo com números
+sempre|Algo com uma seta
+sempre|Algo com rodas
+sempre|Algo fechado com cadeado
+sempre|Algo no alto
+sempre|Algo rente ao chão
+sempre|Algo que serve para sentar
+sempre|Algo que faz barulho
+sempre|Algo de comer
+dia|Algo que faz sombra comprida
+dia|Algo cuja sombra tem forma estranha
+dia|Algo contra o céu
+dia|Algo brilhando no sol
+dia|Algo na sombra
+dia|Algo florido
+dia|Algo verde que não é planta
+dia|Algo da cor do céu
+noite|Algo que brilha no escuro
+noite|Algo que pisca
+noite|Algo iluminado por baixo
+noite|Algo com luz colorida
+noite|Algo com luz amarela
+noite|Algo com luz branca
+noite|Algo com letreiro aceso
+noite|Algo refletido no chão
+noite|Algo refletindo uma luz
+noite|Algo com sombra dupla
+noite|Algo quase invisível no escuro
+noite|Algo que só aparece à noite

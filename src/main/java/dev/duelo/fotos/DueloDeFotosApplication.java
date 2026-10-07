@@ -1,13 +1,13 @@
-package dev.passeio.diario;
+package dev.duelo.fotos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DiarioDePasseioApplication {
+public class DueloDeFotosApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DiarioDePasseioApplication.class, args);
+		SpringApplication.run(DueloDeFotosApplication.class, args);
 	}
 
 }

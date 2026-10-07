@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Duelo de Fotos</title>
+	<link rel="stylesheet" href="/estilo.css">
+</head>
+<body>
+	<header class="topo"><a class="marca" href="/">Duelo de Fotos</a></header>
+	<main class="estreito">
+		<h1 th:text="|${duelo.jogadores[0].nome} contra ${duelo.jogadores[1].nome}|"></h1>
+		<p class="sub">Os temas estão sorteados. Cada um abre só a própria carta.</p>
+
+		<section class="bloco">
+			<span class="passo">Antes de sair</span>
+			<h2>Peguem as cartas</h2>
+			<p>Um de cada vez: abra a sua sem o outro olhar, tire uma foto dela com o celular ou imprima, e feche.</p>
+			<div class="botoes">
+				<a class="botao" th:each="j, i : ${duelo.jogadores}" th:href="@{/duelos/{id}/carta/{n}(id=${duelo.id},n=${i.count})}"
+					th:text="|Carta de ${j.nome}|"></a>
+			</div>
+		</section>
+
+		<section class="bloco">
+			<span class="passo">Na volta</span>
+			<h2>Tragam as fotos</h2>
+			<p>Guardem o endereço desta página. É por aqui que as fotos entram.</p>
+			<div class="botoes">
+				<a class="botao claro" th:href="@{/duelos/{id}/fotos(id=${duelo.id})}">Voltamos do passeio</a>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

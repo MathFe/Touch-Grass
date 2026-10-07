@@ -8,11 +8,11 @@
 		<version>4.1.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>dev.passeio</groupId>
-	<artifactId>diario-de-passeio</artifactId>
+	<groupId>dev.duelo</groupId>
+	<artifactId>duelo-de-fotos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>diario-de-passeio</name>
-	<description>Diário de passeio com Gemma local</description>
+	<name>duelo-de-fotos</name>
+	<description>Duelo de fotos com o Gemma local como juiz</description>
 	<url/>
 	<licenses>
 		<license/>

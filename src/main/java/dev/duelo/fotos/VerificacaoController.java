@@ -1,4 +1,4 @@
-package dev.passeio.diario;
+package dev.duelo.fotos;
 
 import java.time.Duration;
 import java.util.Map;

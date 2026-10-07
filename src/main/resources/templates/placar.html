@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>O placar do duelo</title>
+	<link rel="stylesheet" href="/estilo.css">
+</head>
+<body th:with="vencedor=${duelo.vencedor()}">
+	<header class="topo"><a class="marca" href="/">Duelo de Fotos</a></header>
+	<main>
+		<h1 th:if="${vencedor >= 0}" th:text="|${duelo.jogadores[vencedor].nome} venceu|"></h1>
+		<h1 th:if="${vencedor < 0}">Deu empate</h1>
+
+		<section class="placar" th:aria-label="|Placar: ${duelo.jogadores[0].total()} × ${duelo.jogadores[1].total()}|">
+			<div class="lado" th:classappend="${vencedor == 0} ? 'venceu'">
+				<span class="nome" th:text="${duelo.jogadores[0].nome}"></span>
+				<span class="pontos" th:text="${duelo.jogadores[0].total()}"></span>
+			</div>
+			<span class="versus" aria-hidden="true">×</span>
+			<div class="lado" th:classappend="${vencedor == 1} ? 'venceu'">
+				<span class="nome" th:text="${duelo.jogadores[1].nome}"></span>
+				<span class="pontos" th:text="${duelo.jogadores[1].total()}"></span>
+			</div>
+		</section>
+
+		<section class="jogador" th:each="j : ${duelo.jogadores}">
+			<h2><span th:text="${j.nome}" th:remove="tag"></span> <span th:text="|${j.total()} pontos|"></span></h2>
+			<div class="grade">
+				<figure class="foto" th:each="r : ${j.rodadas}">
+					<div class="quadro">
+						<img th:if="${r.arquivo != null}" th:alt="|Foto para o tema: ${r.tema}|"
+							th:src="@{/duelos/{id}/fotos/{arquivo}(id=${duelo.id},arquivo=${r.arquivo})}">
+						<div class="vazio" th:if="${r.arquivo == null}">sem foto</div>
+						<span class="nota" th:if="${r.nota != null}"><span th:text="${r.nota}" th:remove="tag"></span><small>/10</small></span>
+					</div>
+					<figcaption>
+						<span class="tema" th:text="${r.tema}"></span>
+						<span class="motivo" th:if="${r.motivo != null}" th:text="${r.motivo}"></span>
+						<span class="motivo" th:if="${r.arquivo != null and r.nota == null}">O juiz não conseguiu julgar esta foto.</span>
+					</figcaption>
+				</figure>
+			</div>
+		</section>
+
+		<div class="botoes nao-imprime" style="margin-top: 3rem">
+			<a class="botao" href="/">Novo duelo</a>
+			<button type="button" class="claro" onclick="window.print()">Imprimir</button>
+		</div>
+	</main>
+</body>
+</html>
