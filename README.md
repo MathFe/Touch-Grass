@@ -70,3 +70,7 @@ An earlier version let the model write the themes freely. They came out either t
 ```
 
 The tests cover theme selection, verdict parsing, storage and page rendering. They do not call the model, so they pass with Ollama closed.
+
+## License
+
+[MIT](LICENSE)
